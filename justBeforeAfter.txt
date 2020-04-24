@@ -1,0 +1,13 @@
+just BeforeAfter
+
+col = my_sheet.ListColumns("BeforeAfter").Index
+    
+    
+    my_sheet.Range.AutoFilter field:=col, Criterial:="Before"
+    
+    Application.DisplayAlerts = False
+        my_sheet.DataBodyRange.SpecialCells(xlCellTypeVisible).Delete
+    Application.DisplayAlerts = True
+    
+    my_sheet.AutoFilter.ShowAllData
+    
